@@ -13,7 +13,7 @@ function generatePassword() {
 
   if (characters.length === 0) {
     document.getElementById("result").textContent =
-      "Select at least one character type";
+      "Select at least one character type and enter number";
     return;
   }
 

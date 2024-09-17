@@ -5,3 +5,11 @@ body {
 form {
   text-align: center;
 }
+
+button {
+  margin: 20px 10px 10px 10px;
+}
+
+#result {
+  margin: 10px 10px 10px 10px;
+}
