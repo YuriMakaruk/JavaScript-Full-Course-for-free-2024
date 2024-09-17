@@ -28,9 +28,9 @@ input {
   text-align: center;
   font-weight: bold;
 }
-#diceResult {
+#flipResult {
   margin: 25px;
 }
-#diceImage img {
+#coinImage img {
   width: 100px;
 }

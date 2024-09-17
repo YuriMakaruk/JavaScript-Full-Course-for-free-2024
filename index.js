@@ -1,15 +1,15 @@
-function rollDice() {
-  const numOfDice = document.getElementById("numofdice").value;
-  const diceResult = document.getElementById("diceResult");
-  const diceImages = document.getElementById("diceImage");
+function flipCoin() {
+  const numOfFlips = document.getElementById("numOfFlips").value;
+  const flipResult = document.getElementById("flipResult");
+  const coinImage = document.getElementById("coinImage");
   const values = [];
   const images = [];
 
-  for (let i = 0; i < numOfDice; i++) {
-    const value = Math.floor(Math.random() * 6) + 1;
+  for (let i = 0; i < numOfFlips; i++) {
+    const value = Math.floor(Math.random() * 2) + 1;
     values.push(value);
-    images.push(`<img src="images/${value}.png" alt="Dice ${value}">`);
+    images.push(`<img src="images/${value}.png" alt="Coin ${value}">`);
   }
-  diceResult.textContent = `dice: ${values.join(", ")}`;
-  diceImages.innerHTML = images.join("");
+  flipResult.textContent = `Coin: ${values.join(", ")}`;
+  coinImage.innerHTML = images.join("");
 }
