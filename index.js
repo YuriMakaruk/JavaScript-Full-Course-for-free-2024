@@ -1,15 +1,48 @@
-function flipCoin() {
-  const numOfFlips = document.getElementById("numOfFlips").value;
-  const flipResult = document.getElementById("flipResult");
-  const coinImage = document.getElementById("coinImage");
-  const values = [];
-  const images = [];
+function generatePassword(
+  passwordLength,
+  includeLowercase,
+  includeUppercase,
+  includeNumbers,
+  includeSymbols
+) {
+  const lowecasechars = "abcdefghijklmnopqrstuvwxyz";
+  const uppercasechars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  const numberChars = "0123456789";
+  const symbolChars = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
 
-  for (let i = 0; i < numOfFlips; i++) {
-    const value = Math.floor(Math.random() * 2) + 1;
-    values.push(value);
-    images.push(`<img src="images/${value}.png" alt="Coin ${value}">`);
+  let allowedChars = "";
+  let password = "";
+
+  allowedChars += includeLowercase ? lowecasechars : "";
+  allowedChars += includeUppercase ? uppercasechars : "";
+  allowedChars += includeNumbers ? numberChars : "";
+  allowedChars += includeSymbols ? symbolChars : "";
+
+  if (passwordLength <= 0) {
+    return `password length must be at lease 1`;
   }
-  flipResult.textContent = `Coin: ${values.join(", ")}`;
-  coinImage.innerHTML = images.join("");
+  if (allowedChars.length === 0) {
+    return `select at least one set of characters`;
+  }
+  for (let i = 0; i < passwordLength; i++) {
+    const random = Math.floor(Math.random() * allowedChars.length);
+    password += allowedChars[random];
+  }
+  return password;
 }
+
+const passwordLength = 12;
+const includeLowercase = false;
+const includeUppercase = false;
+const includeNumbers = true;
+const includeSymbols = false;
+
+const password = generatePassword(
+  passwordLength,
+  includeLowercase,
+  includeUppercase,
+  includeNumbers,
+  includeSymbols
+);
+
+console.log(`Generated password: ${password}`);
