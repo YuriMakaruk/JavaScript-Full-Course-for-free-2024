@@ -9,12 +9,13 @@
   <body>
     <form>
       <h1>Password Generator</h1>
-      <input type="number" id="textbox" value="0" /> <br />
+      <input type="number" id="textbox" value="0" />
+      <label for="UpperCaseCharacters">Number of Characters</label><br /><br />
 
-      <input type="checkbox" name="unit" id="upperCaseCharacters" />
+      <input type="checkbox" name="unit" id="UpperCaseCharacters" />
       <label for="UpperCaseCharacters">Upper Case Characters</label>
 
-      <input type="checkbox" name="unit" id="lowerCaseCharacters" />
+      <input type="checkbox" name="unit" id="LowerCaseCharacters" />
       <label for="LowerCaseCharacters">Lower Case Characters</label>
 
       <input type="checkbox" name="unit" id="numberCharacters" />
@@ -27,7 +28,9 @@
         Generate Password
       </button>
 
-      <p id="result">Select Characters in Password</p>
+      <p id="result">
+        Select the number and characters type to use in password
+      </p>
     </form>
 
     <script src="index.js"></script>
