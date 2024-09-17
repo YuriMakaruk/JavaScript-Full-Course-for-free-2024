@@ -1,15 +1,22 @@
 function flipCoin() {
-  const numOfFlips = document.getElementById("numOfFlips").value;
-  const flipResult = document.getElementById("flipResult");
-  const coinImage = document.getElementById("coinImage");
-  const values = [];
+  const numOfCoins = document.getElementById("numofcoins").value;
+  const coinResult = document.getElementById("coinResult");
+  const coinImages = document.getElementById("coinImages");
+  let headsCount = 0;
+  let tailsCount = 0;
   const images = [];
 
-  for (let i = 0; i < numOfFlips; i++) {
-    const value = Math.floor(Math.random() * 2) + 1;
-    values.push(value);
-    images.push(`<img src="images/${value}.png" alt="Coin ${value}">`);
+  for (let i = 0; i < numOfCoins; i++) {
+    const flip = Math.random() < 0.5 ? "Heads" : "Tails";
+    if (flip === "Heads") {
+      headsCount++;
+      images.push(`<img src="images/1.png" alt="Heads">`);
+    } else {
+      tailsCount++;
+      images.push(`<img src="images/2.png" alt="Tails">`);
+    }
   }
-  flipResult.textContent = `Coin: ${values.join(", ")}`;
-  coinImage.innerHTML = images.join("");
+
+  coinResult.textContent = `Heads: ${headsCount}, Tails: ${tailsCount}`;
+  coinImages.innerHTML = images.join("");
 }
