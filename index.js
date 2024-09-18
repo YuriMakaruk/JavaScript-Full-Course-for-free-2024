@@ -2,6 +2,8 @@ const quote = document.getElementById("quote");
 const motivational = document.getElementById("motivationalQuotes");
 const funny = document.getElementById("funnyQuotes");
 const philosophical = document.getElementById("philosophicalQuotes");
+const myQuoteRadio = document.getElementById("myQuoteRadio");
+
 let randomQuote;
 
 const motivationalQuotes = [
@@ -22,19 +24,32 @@ const philosophicalQuotes = [
   "The only thing I know is that I know nothing.",
 ];
 
+let myQuoteArr = [];
+
 function generator() {
   if (motivational.checked) {
     randomQuote = Math.floor(Math.random() * motivationalQuotes.length);
     quote.textContent = motivationalQuotes[randomQuote];
   } else if (funny.checked) {
     randomQuote = Math.floor(Math.random() * funnyQuotes.length);
-
     quote.textContent = funnyQuotes[randomQuote];
   } else if (philosophical.checked) {
     randomQuote = Math.floor(Math.random() * philosophicalQuotes.length);
-
     quote.textContent = philosophicalQuotes[randomQuote];
+  } else if (myQuoteRadio.checked) {
+    randomQuote = Math.floor(Math.random() * myQuoteArr.length);
+    quote.textContent = myQuoteArr[randomQuote];
   } else {
     quote.textContent = "Please select a category.";
   }
+}
+
+function addMyQuote() {
+  const input = document.getElementById("add").value;
+  if (input) {
+    myQuoteArr.push(input);
+    myquote.textContent = `Your quote: "${input}" added successfully!`;
+    console.log(myQuoteArr);
+  }
+  document.getElementById("add").value = "";
 }
