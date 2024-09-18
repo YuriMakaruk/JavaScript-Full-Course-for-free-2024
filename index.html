@@ -6,5 +6,22 @@
     <title>Password Generator</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body></body>
+  <body>
+    <h1 id="title">Random Quote Generator</h1>
+
+    <form action="">
+      <input type="radio" name="unit" id="motivationalQuotes" />
+      <label for="motivationalQuotes">Motivational Quotes </label> <br />
+
+      <input type="radio" name="unit" id="funnyQuotes" />
+      <label for="funnyQuotes ">Funny Quotes </label> <br />
+
+      <input type="radio" name="unit" id="philosophicalQuotes" />
+      <label for="philosophicalQuotes ">Philosophical Quotes </label> <br />
+
+      <button type="button" onclick="generator()">Generate</button>
+      <p id="quote">Quote:</p>
+    </form>
+    <script src="index.js"></script>
+  </body>
 </html>
