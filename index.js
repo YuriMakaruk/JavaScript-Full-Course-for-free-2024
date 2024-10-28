@@ -1,20 +1,17 @@
-// sum(display, 544, 8);
+const input = document.getElementById("display");
 
-// function sum(callback, x, y) {
-//   let result = x + y;
-//   callback(result);
-// }
-
-// function display(result) {
-//   console.log(result);
-//   document.getElementById("myh1").textContent = result;
-// }
-
-function subtract(callback, x, y) {
-  const result = x - y;
-  callback(result);
+function appendtodisplay(input) {
+  display.value = display.value + input;
 }
-function showResult(result) {
-  console.log(result);
+
+function cleardisplay() {
+  display.value = "";
 }
-subtract(showResult, 55, 44);
+
+function calculate() {
+  try {
+    display.value = eval(display.value);
+  } catch (error) {
+    display.value = "error";
+  }
+}
