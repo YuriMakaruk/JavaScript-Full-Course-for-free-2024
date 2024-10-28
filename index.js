@@ -1350,3 +1350,5 @@ function calculate() {
     display.value = "error";
   }
 }
+
+// endregion
